@@ -9,10 +9,17 @@ def choose_word():
 
 
 def display_state(word, guessed_letters, wrong_guesses):
-    display = " ".join(letter if letter in guessed_letters else "_" for letter in word)
+    display = " ".join(
+        letter if letter in guessed_letters else "_"
+        for letter in word
+    )
+
     print("\nWord: " + display)
     print(f"Wrong guesses: {wrong_guesses}/{MAX_WRONG_GUESSES}")
-    print(f"Guessed letters: {', '.join(sorted(guessed_letters)) if guessed_letters else 'None'}")
+    print(
+        f"Guessed letters: "
+        f"{', '.join(sorted(guessed_letters)) if guessed_letters else 'None'}"
+    )
 
 
 def is_word_guessed(word, guessed_letters):
@@ -25,7 +32,10 @@ def play_hangman():
     wrong_guesses = 0
 
     print("Welcome to Hangman!")
-    print(f"Try to guess the word. You have {MAX_WRONG_GUESSES} wrong guesses allowed.")
+    print(
+        f"Try to guess the word. "
+        f"You have {MAX_WRONG_GUESSES} wrong guesses allowed."
+    )
 
     while wrong_guesses < MAX_WRONG_GUESSES:
         display_state(word, guessed_letters, wrong_guesses)
@@ -55,9 +65,12 @@ def play_hangman():
     print(f"\nGame over! You ran out of guesses. The word was: '{word}'")
 
 
+# Corrected main condition
 if __name__ == "__main__":
     play_again = "y"
+
     while play_again == "y":
         play_hangman()
         play_again = input("\nPlay again? (y/n): ").strip().lower()
+
     print("Thanks for playing!")
