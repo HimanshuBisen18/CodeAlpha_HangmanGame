@@ -1,7 +1,7 @@
 # CodeAlpha_HangmanGame
 
 A simple text-based **Hangman** game built in Python as part of the
-CodeAlpha Python Programming Internship (Task 1).
+CodeAlpha Python Programming Internship .
 
 ## Description
 
